@@ -1,0 +1,2 @@
+# hitokoto
+hitokoto extension
