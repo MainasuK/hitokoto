@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		DB651BE11AFBB9CA000B6415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651BE01AFBB9CA000B6415 /* AppDelegate.swift */; };
-		DB651BE31AFBB9CA000B6415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651BE21AFBB9CA000B6415 /* ViewController.swift */; };
+		DB651BE31AFBB9CA000B6415 /* HitokotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651BE21AFBB9CA000B6415 /* HitokotoViewController.swift */; };
 		DB651BE61AFBB9CA000B6415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB651BE41AFBB9CA000B6415 /* Main.storyboard */; };
 		DB651BE81AFBB9CA000B6415 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB651BE71AFBB9CA000B6415 /* Images.xcassets */; };
 		DB651BEB1AFBB9CA000B6415 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */; };
 		DB651BF71AFBB9CA000B6415 /* hitokotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651BF61AFBB9CA000B6415 /* hitokotoTests.swift */; };
+		DB651C041AFC7972000B6415 /* HitokotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651C031AFC7972000B6415 /* HitokotoData.swift */; };
+		DB651C061AFC79A6000B6415 /* HitokotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651C051AFC79A6000B6415 /* HitokotoService.swift */; };
+		DB651C081AFCCAB7000B6415 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651C071AFCCAB7000B6415 /* MainViewController.swift */; };
+		DB651C131AFCD497000B6415 /* HitokotoDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB651C121AFCD497000B6415 /* HitokotoDataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB651C191AFCD497000B6415 /* HitokotoDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB651C0E1AFCD497000B6415 /* HitokotoDataKit.framework */; };
+		DB651C221AFCD497000B6415 /* HitokotoDataKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB651C211AFCD497000B6415 /* HitokotoDataKitTests.swift */; };
+		DB651C251AFCD497000B6415 /* HitokotoDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB651C0E1AFCD497000B6415 /* HitokotoDataKit.framework */; };
+		DB651C261AFCD497000B6415 /* HitokotoDataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB651C0E1AFCD497000B6415 /* HitokotoDataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +31,63 @@
 			remoteGlobalIDString = DB651BDA1AFBB9CA000B6415;
 			remoteInfo = hitokoto;
 		};
+		DB651C1A1AFCD497000B6415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB651BD31AFBB9CA000B6415 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB651C0D1AFCD497000B6415;
+			remoteInfo = HitokotoDataKit;
+		};
+		DB651C1C1AFCD497000B6415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB651BD31AFBB9CA000B6415 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB651BDA1AFBB9CA000B6415;
+			remoteInfo = hitokoto;
+		};
+		DB651C231AFCD497000B6415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB651BD31AFBB9CA000B6415 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB651C0D1AFCD497000B6415;
+			remoteInfo = HitokotoDataKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB651C2A1AFCD498000B6415 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB651C261AFCD497000B6415 /* HitokotoDataKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DB651BDB1AFBB9CA000B6415 /* hitokoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hitokoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB651BDF1AFBB9CA000B6415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB651BE01AFBB9CA000B6415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB651BE21AFBB9CA000B6415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB651BE21AFBB9CA000B6415 /* HitokotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitokotoViewController.swift; sourceTree = "<group>"; };
 		DB651BE51AFBB9CA000B6415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB651BE71AFBB9CA000B6415 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB651BEA1AFBB9CA000B6415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DB651BF01AFBB9CA000B6415 /* hitokotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hitokotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB651BF51AFBB9CA000B6415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB651BF61AFBB9CA000B6415 /* hitokotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokotoTests.swift; sourceTree = "<group>"; };
+		DB651C031AFC7972000B6415 /* HitokotoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HitokotoData.swift; path = HitokotoData/HitokotoData.swift; sourceTree = "<group>"; };
+		DB651C051AFC79A6000B6415 /* HitokotoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HitokotoService.swift; path = HitokotoData/HitokotoService.swift; sourceTree = "<group>"; };
+		DB651C071AFCCAB7000B6415 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DB651C0E1AFCD497000B6415 /* HitokotoDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HitokotoDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB651C111AFCD497000B6415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB651C121AFCD497000B6415 /* HitokotoDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitokotoDataKit.h; sourceTree = "<group>"; };
+		DB651C181AFCD497000B6415 /* HitokotoDataKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitokotoDataKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB651C201AFCD497000B6415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB651C211AFCD497000B6415 /* HitokotoDataKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitokotoDataKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB651C251AFCD497000B6415 /* HitokotoDataKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +103,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB651C0A1AFCD497000B6415 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB651C151AFCD497000B6415 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB651C191AFCD497000B6415 /* HitokotoDataKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +129,8 @@
 			children = (
 				DB651BDD1AFBB9CA000B6415 /* hitokoto */,
 				DB651BF31AFBB9CA000B6415 /* hitokotoTests */,
+				DB651C0F1AFCD497000B6415 /* HitokotoDataKit */,
+				DB651C1E1AFCD497000B6415 /* HitokotoDataKitTests */,
 				DB651BDC1AFBB9CA000B6415 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +140,8 @@
 			children = (
 				DB651BDB1AFBB9CA000B6415 /* hitokoto.app */,
 				DB651BF01AFBB9CA000B6415 /* hitokotoTests.xctest */,
+				DB651C0E1AFCD497000B6415 /* HitokotoDataKit.framework */,
+				DB651C181AFCD497000B6415 /* HitokotoDataKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +149,13 @@
 		DB651BDD1AFBB9CA000B6415 /* hitokoto */ = {
 			isa = PBXGroup;
 			children = (
+				DB651C071AFCCAB7000B6415 /* MainViewController.swift */,
 				DB651BE01AFBB9CA000B6415 /* AppDelegate.swift */,
-				DB651BE21AFBB9CA000B6415 /* ViewController.swift */,
 				DB651BE41AFBB9CA000B6415 /* Main.storyboard */,
 				DB651BE71AFBB9CA000B6415 /* Images.xcassets */,
 				DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */,
 				DB651BDE1AFBB9CA000B6415 /* Supporting Files */,
+				DB651C021AFC7617000B6415 /* HitokotoData */,
 			);
 			path = hitokoto;
 			sourceTree = "<group>";
@@ -112,7 +185,62 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DB651C021AFC7617000B6415 /* HitokotoData */ = {
+			isa = PBXGroup;
+			children = (
+				DB651BE21AFBB9CA000B6415 /* HitokotoViewController.swift */,
+				DB651C051AFC79A6000B6415 /* HitokotoService.swift */,
+				DB651C031AFC7972000B6415 /* HitokotoData.swift */,
+			);
+			name = HitokotoData;
+			sourceTree = "<group>";
+		};
+		DB651C0F1AFCD497000B6415 /* HitokotoDataKit */ = {
+			isa = PBXGroup;
+			children = (
+				DB651C121AFCD497000B6415 /* HitokotoDataKit.h */,
+				DB651C101AFCD497000B6415 /* Supporting Files */,
+			);
+			path = HitokotoDataKit;
+			sourceTree = "<group>";
+		};
+		DB651C101AFCD497000B6415 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB651C111AFCD497000B6415 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB651C1E1AFCD497000B6415 /* HitokotoDataKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB651C211AFCD497000B6415 /* HitokotoDataKitTests.swift */,
+				DB651C1F1AFCD497000B6415 /* Supporting Files */,
+			);
+			path = HitokotoDataKitTests;
+			sourceTree = "<group>";
+		};
+		DB651C1F1AFCD497000B6415 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB651C201AFCD497000B6415 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DB651C0B1AFCD497000B6415 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB651C131AFCD497000B6415 /* HitokotoDataKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		DB651BDA1AFBB9CA000B6415 /* hitokoto */ = {
@@ -122,10 +250,12 @@
 				DB651BD71AFBB9CA000B6415 /* Sources */,
 				DB651BD81AFBB9CA000B6415 /* Frameworks */,
 				DB651BD91AFBB9CA000B6415 /* Resources */,
+				DB651C2A1AFCD498000B6415 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB651C241AFCD497000B6415 /* PBXTargetDependency */,
 			);
 			name = hitokoto;
 			productName = hitokoto;
@@ -150,6 +280,43 @@
 			productReference = DB651BF01AFBB9CA000B6415 /* hitokotoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DB651C0D1AFCD497000B6415 /* HitokotoDataKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB651C271AFCD498000B6415 /* Build configuration list for PBXNativeTarget "HitokotoDataKit" */;
+			buildPhases = (
+				DB651C091AFCD497000B6415 /* Sources */,
+				DB651C0A1AFCD497000B6415 /* Frameworks */,
+				DB651C0B1AFCD497000B6415 /* Headers */,
+				DB651C0C1AFCD497000B6415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HitokotoDataKit;
+			productName = HitokotoDataKit;
+			productReference = DB651C0E1AFCD497000B6415 /* HitokotoDataKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DB651C171AFCD497000B6415 /* HitokotoDataKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB651C2B1AFCD498000B6415 /* Build configuration list for PBXNativeTarget "HitokotoDataKitTests" */;
+			buildPhases = (
+				DB651C141AFCD497000B6415 /* Sources */,
+				DB651C151AFCD497000B6415 /* Frameworks */,
+				DB651C161AFCD497000B6415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB651C1B1AFCD497000B6415 /* PBXTargetDependency */,
+				DB651C1D1AFCD497000B6415 /* PBXTargetDependency */,
+			);
+			name = HitokotoDataKitTests;
+			productName = HitokotoDataKitTests;
+			productReference = DB651C181AFCD497000B6415 /* HitokotoDataKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -163,6 +330,13 @@
 						CreatedOnToolsVersion = 6.3.1;
 					};
 					DB651BEF1AFBB9CA000B6415 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = DB651BDA1AFBB9CA000B6415;
+					};
+					DB651C0D1AFCD497000B6415 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					DB651C171AFCD497000B6415 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = DB651BDA1AFBB9CA000B6415;
 					};
@@ -183,6 +357,8 @@
 			targets = (
 				DB651BDA1AFBB9CA000B6415 /* hitokoto */,
 				DB651BEF1AFBB9CA000B6415 /* hitokotoTests */,
+				DB651C0D1AFCD497000B6415 /* HitokotoDataKit */,
+				DB651C171AFCD497000B6415 /* HitokotoDataKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +381,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB651C0C1AFCD497000B6415 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB651C161AFCD497000B6415 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,8 +402,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB651BE31AFBB9CA000B6415 /* ViewController.swift in Sources */,
+				DB651C041AFC7972000B6415 /* HitokotoData.swift in Sources */,
+				DB651BE31AFBB9CA000B6415 /* HitokotoViewController.swift in Sources */,
+				DB651C061AFC79A6000B6415 /* HitokotoService.swift in Sources */,
 				DB651BE11AFBB9CA000B6415 /* AppDelegate.swift in Sources */,
+				DB651C081AFCCAB7000B6415 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +418,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB651C091AFCD497000B6415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB651C141AFCD497000B6415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB651C221AFCD497000B6415 /* HitokotoDataKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +440,21 @@
 			isa = PBXTargetDependency;
 			target = DB651BDA1AFBB9CA000B6415 /* hitokoto */;
 			targetProxy = DB651BF11AFBB9CA000B6415 /* PBXContainerItemProxy */;
+		};
+		DB651C1B1AFCD497000B6415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB651C0D1AFCD497000B6415 /* HitokotoDataKit */;
+			targetProxy = DB651C1A1AFCD497000B6415 /* PBXContainerItemProxy */;
+		};
+		DB651C1D1AFCD497000B6415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB651BDA1AFBB9CA000B6415 /* hitokoto */;
+			targetProxy = DB651C1C1AFCD497000B6415 /* PBXContainerItemProxy */;
+		};
+		DB651C241AFCD497000B6415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB651C0D1AFCD497000B6415 /* HitokotoDataKit */;
+			targetProxy = DB651C231AFCD497000B6415 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -392,6 +615,94 @@
 			};
 			name = Release;
 		};
+		DB651C281AFCD498000B6415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HitokotoDataKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DB651C291AFCD498000B6415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = HitokotoDataKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DB651C2C1AFCD498000B6415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HitokotoDataKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hitokoto.app/hitokoto";
+			};
+			name = Debug;
+		};
+		DB651C2D1AFCD498000B6415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HitokotoDataKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hitokoto.app/hitokoto";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +728,22 @@
 			buildConfigurations = (
 				DB651BFE1AFBB9CA000B6415 /* Debug */,
 				DB651BFF1AFBB9CA000B6415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DB651C271AFCD498000B6415 /* Build configuration list for PBXNativeTarget "HitokotoDataKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB651C281AFCD498000B6415 /* Debug */,
+				DB651C291AFCD498000B6415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DB651C2B1AFCD498000B6415 /* Build configuration list for PBXNativeTarget "HitokotoDataKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB651C2C1AFCD498000B6415 /* Debug */,
+				DB651C2D1AFCD498000B6415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
