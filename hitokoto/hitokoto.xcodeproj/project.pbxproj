@@ -155,7 +155,6 @@
 				DB651BE71AFBB9CA000B6415 /* Images.xcassets */,
 				DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */,
 				DB651BDE1AFBB9CA000B6415 /* Supporting Files */,
-				DB651C021AFC7617000B6415 /* HitokotoData */,
 			);
 			path = hitokoto;
 			sourceTree = "<group>";
@@ -193,11 +192,13 @@
 				DB651C031AFC7972000B6415 /* HitokotoData.swift */,
 			);
 			name = HitokotoData;
+			path = ../hitokoto;
 			sourceTree = "<group>";
 		};
 		DB651C0F1AFCD497000B6415 /* HitokotoDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				DB651C021AFC7617000B6415 /* HitokotoData */,
 				DB651C121AFCD497000B6415 /* HitokotoDataKit.h */,
 				DB651C101AFCD497000B6415 /* Supporting Files */,
 			);
@@ -618,6 +619,7 @@
 		DB651C281AFCD498000B6415 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -645,6 +647,7 @@
 		DB651C291AFCD498000B6415 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
