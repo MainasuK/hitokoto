@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HitokotoDataKit
 
 class MainViewController: HitokotoViewController {
 

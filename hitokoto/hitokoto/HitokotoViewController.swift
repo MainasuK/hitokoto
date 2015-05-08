@@ -38,6 +38,19 @@ public class HitokotoViewController: UIViewController {
         }
     }
     
+    public func updateDataExtension() {
+        if let unwrappedHD = hitokotoData {
+            self.hitokotoLabel.text = "\(unwrappedHD.hitokoto)"
+            
+            let source = unwrappedHD.source
+            if source != "" {
+                self.sourceLabel.text = "出自：\(unwrappedHD.source)"
+            } else {
+                self.sourceLabel.text = "未知出处"
+            }
+        }
+    }
+    
     public func getHitokotoData(format: String, completion: (error: NSError?) -> ()) {
         HitokotoService.sharedInstance.fetchHitokotoData(format, completion: { (data, error) -> () in
             

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 Cirno MainasuK. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 
 //! Project version number for HitokotoDataKit.
 FOUNDATION_EXPORT double HitokotoDataKitVersionNumber;
