@@ -41,13 +41,14 @@ public class HitokotoViewController: UIViewController {
     public func updateDataExtension() {
         if let unwrappedHD = hitokotoData {
             self.hitokotoLabel.text = "\(unwrappedHD.hitokoto)"
-            
+            NSUserDefaults.standardUserDefaults().setValue(self.hitokotoLabel.text, forKey: "hitokotoLabel")
             let source = unwrappedHD.source
             if source != "" {
                 self.sourceLabel.text = "出自：\(unwrappedHD.source)"
             } else {
                 self.sourceLabel.text = "未知出处"
             }
+            NSUserDefaults.standardUserDefaults().setValue(self.sourceLabel.text, forKey: "sourceLabel")
         }
     }
     
