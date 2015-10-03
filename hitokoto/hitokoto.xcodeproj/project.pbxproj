@@ -192,8 +192,6 @@
 				DB651C071AFCCAB7000B6415 /* MainViewController.swift */,
 				DB651BE01AFBB9CA000B6415 /* AppDelegate.swift */,
 				DB651BE41AFBB9CA000B6415 /* Main.storyboard */,
-				DB651BE71AFBB9CA000B6415 /* Images.xcassets */,
-				DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */,
 				DB651BDE1AFBB9CA000B6415 /* Supporting Files */,
 			);
 			path = hitokoto;
@@ -202,6 +200,8 @@
 		DB651BDE1AFBB9CA000B6415 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */,
+				DB651BE71AFBB9CA000B6415 /* Images.xcassets */,
 				DB651BDF1AFBB9CA000B6415 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -414,6 +414,7 @@
 				TargetAttributes = {
 					DB651BDA1AFBB9CA000B6415 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Z68BDSMP42;
 					};
 					DB651BEF1AFBB9CA000B6415 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -428,6 +429,7 @@
 					};
 					DB67418B1AFCD8D500834BAF = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Z68BDSMP42;
 					};
 				};
 			};
@@ -625,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -664,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -675,7 +677,8 @@
 		DB651BFB1AFBB9CA000B6415 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = hitokoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -685,7 +688,8 @@
 		DB651BFC1AFBB9CA000B6415 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = hitokoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -804,6 +808,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -819,6 +824,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Hitokoto Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -881,6 +887,7 @@
 				DB67419C1AFCD8D500834BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

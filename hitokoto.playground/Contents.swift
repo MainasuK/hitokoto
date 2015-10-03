@@ -11,7 +11,7 @@ let getURL = "http://api.hitokoto.us/rand?charset=utf-8"
 
 let TimeOut = 50
 
-println(getURL)
+print(getURL)
 
 var request = NSMutableURLRequest()
 let urlPath: String = getURL
@@ -21,15 +21,16 @@ request = NSMutableURLRequest(URL: url)
 request.HTTPMethod = "GET"
 
 var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-var error: NSErrorPointer = nil
-var dataVal = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error:nil)!
-var err: NSError
+//var error: NSErrorPointer = nil
+//var dataVal = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error:nil)!
+var dataVal = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: response)
+//var err: NSError
 
-println(response)
+print(response)
 
-
-var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataVal, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-println("Synchronous\(jsonResult)")
+//var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataVal, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+var jsonResult: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(dataVal, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+print("Synchronous\(jsonResult)")
 
 let hitokoto = jsonResult["hitokoto"] as? String
 let category = jsonResult["cat"] as? String

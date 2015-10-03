@@ -31,7 +31,7 @@ public class HitokotoViewController: UIViewController {
             
             let source = unwrappedHD.source
             if source != "" {
-                self.sourceLabel.text = "出自：\(unwrappedHD.source)"
+                self.sourceLabel.text = "「\(unwrappedHD.source)」"
             } else {
                 self.sourceLabel.text = "未知出处"
             }
@@ -44,9 +44,9 @@ public class HitokotoViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setValue(self.hitokotoLabel.text, forKey: "hitokotoLabel")
             let source = unwrappedHD.source
             if source != "" {
-                self.sourceLabel.text = "出自：\(unwrappedHD.source)"
+                self.sourceLabel.text = "「\(unwrappedHD.source)」"
             } else {
-                self.sourceLabel.text = "未知出处"
+                self.sourceLabel.text = "\"未知出处\""
             }
             NSUserDefaults.standardUserDefaults().setValue(self.sourceLabel.text, forKey: "sourceLabel")
         }
