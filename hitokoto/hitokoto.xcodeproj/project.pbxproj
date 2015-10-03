@@ -192,8 +192,6 @@
 				DB651C071AFCCAB7000B6415 /* MainViewController.swift */,
 				DB651BE01AFBB9CA000B6415 /* AppDelegate.swift */,
 				DB651BE41AFBB9CA000B6415 /* Main.storyboard */,
-				DB651BE71AFBB9CA000B6415 /* Images.xcassets */,
-				DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */,
 				DB651BDE1AFBB9CA000B6415 /* Supporting Files */,
 			);
 			path = hitokoto;
@@ -202,6 +200,8 @@
 		DB651BDE1AFBB9CA000B6415 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB651BE91AFBB9CA000B6415 /* LaunchScreen.xib */,
+				DB651BE71AFBB9CA000B6415 /* Images.xcassets */,
 				DB651BDF1AFBB9CA000B6415 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -677,7 +677,7 @@
 		DB651BFB1AFBB9CA000B6415 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = hitokoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -688,7 +688,7 @@
 		DB651BFC1AFBB9CA000B6415 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = hitokoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

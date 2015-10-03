@@ -6,3 +6,5 @@
 <img src="./screenshot/IMG_4040.PNG" width = "320" alt="hitokoto" align=center />
 
 ----------
+
+MIT License
