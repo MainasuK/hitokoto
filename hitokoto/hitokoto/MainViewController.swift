@@ -13,9 +13,21 @@ class MainViewController: HitokotoViewController {
 
     var format = "charset=utf-8"
     
+    @IBAction func refreshData(sender: AnyObject) {
+        let refreshButton = sender as? UIButton
+        refreshButton?.enabled = false
+        getHitokotoData(format, completion: { (error) -> () in
+            if error == nil {
+                self.updateData()
+            }
+            
+            refreshButton?.enabled = true
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         hitokotoLabel.text = "少女祈祷中"
         authorLabel.text = ""
@@ -27,17 +39,9 @@ class MainViewController: HitokotoViewController {
         
     }
     
-    @IBAction func refreshData(sender: AnyObject) {
-        (sender as? UIButton)?.enabled = false
-        getHitokotoData(format, completion: { (error) -> () in
-            if error == nil {
-                self.updateData()
-                (sender as? UIButton)?.enabled = true
-            }
-        })
-    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
         getHitokotoData(format, completion: { (error) -> () in
             if error == nil {
                 self.updateData()

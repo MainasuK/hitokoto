@@ -27,7 +27,7 @@ public class HitokotoViewController: UIViewController {
             self.likeLabel.text = "Like：\(unwrappedHD.like)"
             self.dateLabel.text = "投稿日期：\(unwrappedHD.date)"
             self.catnameLabel.text = "\(unwrappedHD.catname)"
-            self.idLabel.text = "ID：\(unwrappedHD.id)"
+//            self.idLabel.text = "ID：\(unwrappedHD.id)"
             
             let source = unwrappedHD.source
             if source != "" {
