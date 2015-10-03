@@ -28,9 +28,11 @@ class MainViewController: HitokotoViewController {
     }
     
     @IBAction func refreshData(sender: AnyObject) {
+        (sender as? UIButton)?.enabled = false
         getHitokotoData(format, completion: { (error) -> () in
             if error == nil {
                 self.updateData()
+                (sender as? UIButton)?.enabled = true
             }
         })
     }

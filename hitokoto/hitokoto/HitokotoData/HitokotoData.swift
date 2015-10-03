@@ -21,7 +21,7 @@ public class HitokotoData: NSObject {
     
     public init(hitokotoDictionary: NSDictionary) {
         let jsonResult = hitokotoDictionary
-        println(jsonResult)
+        print(jsonResult)
         
         hitokoto = jsonResult["hitokoto"] as! String
         source = jsonResult["source"] as! String

@@ -40,8 +40,14 @@ class TodayViewController: HitokotoViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0.0, defaultMarginInsets.left, 0.0, defaultMarginInsets.right)
+//        return UIEdgeInsetsZero
+    }
+    
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
+        print("Loading…")
         getHitokotoData(format, completion: { (error) -> () in
             if error == nil {
                 self.updateDataExtension()
