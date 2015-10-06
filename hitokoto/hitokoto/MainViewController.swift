@@ -16,15 +16,18 @@ final class MainViewController: HitokotoViewController { // If you don't need to
     @IBAction func refreshData(sender: UIButton) { //While adding an @IBAction you may specify the sender as a UIButton rather than AnyObject so that you don't need to do the additional cast down
         sender.enabled = false
         getHitokotoData(format, completion: { (error) -> () in
+			// You may use defer to set the actions you'd like to perform at the end of the scope
+			defer {
+				sender.enabled = true
+			}
+			
 			// If there's an error use guard rather than if which is easier to understand the logic.
 			guard error == nil else {
 				debugPrint(error) // Display the error in console window so it's easier to debug
-				sender.enabled = true
 				return
 			}
 			
 			self.updateData()
-            sender.enabled = true
         })
     }
     
