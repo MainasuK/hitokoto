@@ -11,6 +11,7 @@ import Foundation
 // Create an error type which you'll use later
 enum HitokotoServiceError: ErrorType {
 	case InvalidRetrievedDictionary
+	case InvalidURLFormat(format: String)
 }
 
 final class HitokotoService { // If you don't need to create another sub class inherited from this one, add a final prefix
@@ -33,8 +34,12 @@ final class HitokotoService { // If you don't need to create another sub class i
     
     func fetchHitokotoData(format: String, completion: HitokotoDataCompletionBlock) {
         
-        let baseUrl = NSURL(string: "http://api.hitokoto.us/rand?\(format)")
-        let request = NSURLRequest(URL: baseUrl!)
+		guard let baseUrl = NSURL(string: "http://api.hitokoto.us/rand?\(format)") else { // Throw an error rather than using forced unwrapping
+			completion(data: nil, error: HitokotoServiceError.InvalidURLFormat(format: format))
+			return
+		}
+		
+        let request = NSURLRequest(URL: baseUrl)
         print(baseUrl) // You don't need to do the forced formatting since the result is definitely the same.
 		
         let task = session.dataTaskWithRequest(request) { data, response, error in
