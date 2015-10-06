@@ -50,7 +50,7 @@ final class HitokotoService { // If you don't need to create another sub class i
 			}
 			
 			do {
-				guard let hitokotoDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary else { // Throw an error rather than using forced unwrapping
+				guard let hitokotoDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String: NSObject] else { // Throw an error rather than using forced unwrapping, and specify the swift dictionary instance rather than using Objective-C NSDictionary object
 					throw HitokotoServiceError.InvalidRetrievedDictionary
 				}
 				let data = try HitokotoData(hitokotoDictionary: hitokotoDictionary)

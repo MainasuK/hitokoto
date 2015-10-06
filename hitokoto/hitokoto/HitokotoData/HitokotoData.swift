@@ -24,7 +24,7 @@ struct HitokotoData { // You don't really need to use a class here since it's ju
     let catname: String
     let id: Int
 	
-    init(hitokotoDictionary: NSDictionary) throws { // Create a throwable initializer rather than using forced unwrapping
+	init(hitokotoDictionary: [String: NSObject]) throws { // Create a throwable initializer rather than using forced unwrapping
         let jsonResult = hitokotoDictionary
         print(jsonResult)
 		
