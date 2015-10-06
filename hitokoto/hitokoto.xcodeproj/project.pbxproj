@@ -26,6 +26,7 @@
 		DB6741961AFCD8D500834BAF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB6741951AFCD8D500834BAF /* MainInterface.storyboard */; };
 		DB6741991AFCD8D500834BAF /* Hitokoto Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB67418C1AFCD8D500834BAF /* Hitokoto Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DB67419E1AFCD91200834BAF /* HitokotoDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB651C371AFCD736000B6415 /* HitokotoDataKit.framework */; };
+		DBA109EF1BC3987B0036A294 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA109EE1BC3987B0036A294 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		DB6741921AFCD8D500834BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB6741931AFCD8D500834BAF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		DB6741951AFCD8D500834BAF /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		DBA109EE1BC3987B0036A294 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA109EF1BC3987B0036A294 /* Social.framework in Frameworks */,
 				DB651C4E1AFCD736000B6415 /* HitokotoDataKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +276,7 @@
 		DB67418D1AFCD8D500834BAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBA109EE1BC3987B0036A294 /* Social.framework */,
 				DB67418E1AFCD8D500834BAF /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
