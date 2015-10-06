@@ -10,7 +10,7 @@ import UIKit
 import NotificationCenter
 import HitokotoDataKit
 
-class TodayViewController: HitokotoViewController, NCWidgetProviding {
+final class TodayViewController: HitokotoViewController, NCWidgetProviding {
     var format = "charset=utf-8"
     
     var lastHitokoto: String?
