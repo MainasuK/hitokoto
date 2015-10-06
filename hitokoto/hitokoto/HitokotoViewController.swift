@@ -18,7 +18,7 @@ public class HitokotoViewController: UIViewController {
     @IBOutlet public weak var idLabel: UILabel!
     @IBOutlet public weak var sourceLabel: UILabel!
     
-    public var hitokotoData: HitokotoData?
+    private var hitokotoData: HitokotoData? // Use as strict scope as possible. You don't need to let everybody see the proberties.
     
     public func updateData() {
         if let unwrappedHD = hitokotoData {
@@ -28,31 +28,33 @@ public class HitokotoViewController: UIViewController {
             self.dateLabel.text = "投稿日期：\(unwrappedHD.date)"
             self.catnameLabel.text = "\(unwrappedHD.catname)"
 //            self.idLabel.text = "ID：\(unwrappedHD.id)"
-            
-            let source = unwrappedHD.source
-            if source != "" {
-                self.sourceLabel.text = "「\(unwrappedHD.source)」"
-            } else {
-                self.sourceLabel.text = "未知出处"
-            }
+			
+			self.sourceLabel.text = unwrappedHD.source == "" ? "未知出处" : "「\(unwrappedHD.source)」" // A smarter syntax to set the sourceLabel in 1 line which is also easier to read
+//            let source = unwrappedHD.source
+//            if source != "" {
+//                self.sourceLabel.text = "「\(unwrappedHD.source)」"
+//            } else {
+//                self.sourceLabel.text = "未知出处"
+//            }
         }
     }
     
     public func updateDataExtension() {
         if let unwrappedHD = hitokotoData {
             self.hitokotoLabel.text = "\(unwrappedHD.hitokoto)"
-            NSUserDefaults.standardUserDefaults().setValue(self.hitokotoLabel.text, forKey: "hitokotoLabel")
-            let source = unwrappedHD.source
-            if source != "" {
-                self.sourceLabel.text = "「\(unwrappedHD.source)」"
-            } else {
-                self.sourceLabel.text = "\"未知出处\""
-            }
-            NSUserDefaults.standardUserDefaults().setValue(self.sourceLabel.text, forKey: "sourceLabel")
+            NSUserDefaults.standardUserDefaults().setValue(self.hitokotoLabel.text, forKey: "hitokotoLabel") // I searched the project but didn't find anywhere you load this UserDefaults value...
+			self.sourceLabel.text = unwrappedHD.source == "" ? "\"未知出处\"" : "「\(unwrappedHD.source)」" // A smarter syntax to set the sourceLabel in 1 line which is also easier to read
+//            let source = unwrappedHD.source
+//            if source != "" {
+//                self.sourceLabel.text = "「\(unwrappedHD.source)」"
+//            } else {
+//                self.sourceLabel.text = "\"未知出处\""
+//            }
+            NSUserDefaults.standardUserDefaults().setValue(self.sourceLabel.text, forKey: "sourceLabel") // I searched the project but didn't find anywhere you load this UserDefaults value...
         }
     }
     
-    public func getHitokotoData(format: String, completion: (error: NSError?) -> ()) {
+    public func getHitokotoData(format: String, completion: (error: ErrorType?) -> ()) { // Use ErrorType rather than NSError which is much more powerful in Swift.
         HitokotoService.sharedInstance.fetchHitokotoData(format, completion: { (data, error) -> () in
             
             dispatch_async(dispatch_get_main_queue()) {

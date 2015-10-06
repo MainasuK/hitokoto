@@ -74,7 +74,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="refreshData:" destination="yma-Gp-TN3" eventType="touchUpInside" id="W6S-VF-cv7"/>
+                                    <action selector="refreshData:" destination="yma-Gp-TN3" eventType="touchUpInside" id="MKS-mO-jEw"/>
                                 </connections>
                             </button>
                         </subviews>
