@@ -7,29 +7,69 @@
 //
 
 import UIKit
+import Social
 import HitokotoDataKit
 
 final class MainViewController: HitokotoViewController { // If you don't need to create another sub class inherited from this one, add a final prefix
 	
-    private let format = "charset=utf-8" // Basically use let if possible, and use as strict scope as possible
+    private var isFirstLoad = true
+    private let format = "charset=utf-8" // Basically use let if possible, and use as strict scope as possibl
+    private let viewUrl = "hitokoto.us/view/"
+    
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBAction func refreshData(sender: UIButton) { //While adding an @IBAction you may specify the sender as a UIButton rather than AnyObject so that you don't need to do the additional cast down
-        sender.enabled = false
+        sender.hidden = true
+        shareButton.enabled = false
+
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        spinner.center = sender.center
+        spinner.color = sender.titleColorForState(.Normal)
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        self.view.addSubview(spinner)
+        self.view.userInteractionEnabled = false
+        
         getHitokotoData(format, completion: { (error) -> () in
-			// You may use defer to set the actions you'd like to perform at the end of the scope
+            // You may use defer to set the actions you'd like to perform at the end of the scope
 			defer {
-				sender.enabled = true
+                spinner.stopAnimating()
+				sender.hidden = false
+                self.view.userInteractionEnabled = true
 			}
 			
-			// If there's an error use guard rather than if which is easier to understand the logic.
 			guard error == nil else {
-				debugPrint(error) // Display the error in console window so it's easier to debug
+                // FIXME: async error handle 
+//                do {
+//                    try self.throwError(error!)
+//                } catch HitokotoServiceError.NSURLError(let format) {
+//                    
+//                }
+                self.showAlertMessage("数据获取失败，请刷新重试")
 				return
 			}
 			
 			self.updateData()
+            self.shareButton.enabled = true
         })
     }
+    
+    @IBAction func shareButtonPressed(sender: UIBarButtonItem) {
+        
+        guard let hitokoto = self.hitokotoLabel.text,
+        let source = self.sourceLabel.text,
+        let id = self.hitokotoID,
+        let url = NSURL(string: ("http://" + "\(self.viewUrl)" + "\(id)") ) else {
+            self.showAlertMessage("没有一言可以用来分享哟")
+            return
+        }
+        
+        let objectToShare = ["「\(hitokoto)」\(source) | 一言", url]
+        let activityViewController = UIActivityViewController(activityItems: objectToShare, applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,19 +83,20 @@ final class MainViewController: HitokotoViewController { // If you don't need to
         idLabel.text = ""
         sourceLabel.text = "Loading..."
         
+        idLabel.hidden = true
+        
+        NSLog(refreshButton.tintColor.description)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        getHitokotoData(format, completion: { (error) -> () in
-			// If there's an error use guard rather than if which is easier to understand the logic.
-			guard error == nil else {
-				debugPrint(error) // Display the error in console window so it's easier to debug
-				return
-			}
-			self.updateData()
-        })
+        if !isFirstLoad {
+            return
+        }
+        
+        isFirstLoad = false
+        refreshData(refreshButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +104,15 @@ final class MainViewController: HitokotoViewController { // If you don't need to
         // Dispose of any resources that can be recreated.
     }
     
+    func showAlertMessage(message: String!) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+//    func throwError(error: ErrorType) throws {
+//        throw error
+//    }
 
     /*
     // MARK: - Navigation
