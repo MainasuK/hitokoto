@@ -11,7 +11,7 @@ import HitokotoDataKit
 
 class MainViewController: HitokotoViewController {
 	
-    let format = "charset=utf-8" // Basically use let if possible
+    private let format = "charset=utf-8" // Basically use let if possible, and use as strict scope as possible
     
     @IBAction func refreshData(sender: UIButton) { //While adding an @IBAction you may specify the sender as a UIButton rather than AnyObject so that you don't need to do the additional cast down
         sender.enabled = false

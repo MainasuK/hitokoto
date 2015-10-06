@@ -17,7 +17,7 @@ class HitokotoService {
     
     typealias HitokotoDataCompletionBlock = (data: HitokotoData?, error: ErrorType?) -> ()
     
-    let session: NSURLSession
+    private let session: NSURLSession // Use as strict scope as possible. You don't need to let everybody see the proberties.
 	
 	static let sharedInstance = HitokotoService() // Since Swift 1.2 you don't need the ugly extra struct contanind in the class var anymore.
 //    class var sharedInstance: HitokotoService {
