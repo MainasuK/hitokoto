@@ -8,20 +8,26 @@
 
 import Foundation
 
+// Create an error type which you'll use later
+enum HitokotoServiceError: ErrorType {
+	case InvalidRetrievedDictionary
+}
+
 class HitokotoService {
     
-    typealias HitokotoDataCompletionBlock = (data: HitokotoData?, error: NSError?) -> ()
+    typealias HitokotoDataCompletionBlock = (data: HitokotoData?, error: ErrorType?) -> ()
     
     let session: NSURLSession
-    
-    class var sharedInstance: HitokotoService {
-        struct Singleton {
-            static let instance = HitokotoService()
-        }
-        return Singleton.instance
-    }
-    
-    init() {
+	
+	static let sharedInstance = HitokotoService() // Since Swift 1.2 you don't need the ugly extra struct contanind in the class var anymore.
+//    class var sharedInstance: HitokotoService {
+//        struct Singleton {
+//            static let instance = HitokotoService()
+//        }
+//        return Singleton.instance
+//    }
+	
+    private init() { // Basically singleton design pattern is not so recommended but if you'd really like to use it, remember to hide the initializer.
         session = NSURLSession(configuration: .defaultSessionConfiguration())
     }
     
@@ -29,23 +35,28 @@ class HitokotoService {
         
         let baseUrl = NSURL(string: "http://api.hitokoto.us/rand?\(format)")
         let request = NSURLRequest(URL: baseUrl!)
-        print("\(baseUrl)")
+        print(baseUrl) // You don't need to do the forced formatting since the result is definitely the same.
+		
         let task = session.dataTaskWithRequest(request) { data, response, error in
             
-            if error == nil {
-                do {
-                    let hitokotoDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    let data = HitokotoData(hitokotoDictionary: hitokotoDictionary)
-                    completion(data: data, error: nil)
-                } catch let error as NSError {
-                    completion(data: nil, error: error)
-                }
-            } else {
-                completion(data: nil, error: error)
-            }
-        }
-        
-        task.resume()
+			guard let data = data where error == nil  else { // If there's an error use guard rather than if which is easier to understand the logic. Also you may unwrap the optional value here so you don't need to forced unwrapping it later.
+				completion(data: nil, error: error)
+				return
+			}
+			
+			do {
+				guard let hitokotoDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary else { // Throw an error rather than using forced unwrapping
+					throw HitokotoServiceError.InvalidRetrievedDictionary
+				}
+				let data = try HitokotoData(hitokotoDictionary: hitokotoDictionary)
+				completion(data: data, error: nil)
+				
+			} catch let error {
+				completion(data: nil, error: error)
+			}
+		}
+		
+		task.resume()
     }
     
     

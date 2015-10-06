@@ -10,18 +10,21 @@ import UIKit
 import HitokotoDataKit
 
 class MainViewController: HitokotoViewController {
-
-    var format = "charset=utf-8"
+	
+    let format = "charset=utf-8" // Basically use let if possible
     
-    @IBAction func refreshData(sender: AnyObject) {
-        let refreshButton = sender as? UIButton
-        refreshButton?.enabled = false
+    @IBAction func refreshData(sender: UIButton) { //While adding an @IBAction you may specify the sender as a UIButton rather than AnyObject so that you don't need to do the additional cast down
+        sender.enabled = false
         getHitokotoData(format, completion: { (error) -> () in
-            if error == nil {
-                self.updateData()
-            }
-            
-            refreshButton?.enabled = true
+			// If there's an error use guard rather than if which is easier to understand the logic.
+			guard error == nil else {
+				debugPrint(error) // Display the error in console window so it's easier to debug
+				sender.enabled = true
+				return
+			}
+			
+			self.updateData()
+            sender.enabled = true
         })
     }
     
@@ -43,9 +46,12 @@ class MainViewController: HitokotoViewController {
         super.viewDidAppear(animated)
         
         getHitokotoData(format, completion: { (error) -> () in
-            if error == nil {
-                self.updateData()
-            }
+			// If there's an error use guard rather than if which is easier to understand the logic.
+			guard error == nil else {
+				debugPrint(error) // Display the error in console window so it's easier to debug
+				return
+			}
+			self.updateData()
         })
     }
 
