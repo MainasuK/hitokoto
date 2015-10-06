@@ -13,7 +13,7 @@ enum HitokotoServiceError: ErrorType {
 	case InvalidRetrievedDictionary
 }
 
-class HitokotoService {
+final class HitokotoService { // If you don't need to create another sub class inherited from this one, add a final prefix
     
     typealias HitokotoDataCompletionBlock = (data: HitokotoData?, error: ErrorType?) -> ()
     

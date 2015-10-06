@@ -9,7 +9,7 @@
 import UIKit
 import HitokotoDataKit
 
-class MainViewController: HitokotoViewController {
+final class MainViewController: HitokotoViewController { // If you don't need to create another sub class inherited from this one, add a final prefix
 	
     private let format = "charset=utf-8" // Basically use let if possible, and use as strict scope as possible
     
