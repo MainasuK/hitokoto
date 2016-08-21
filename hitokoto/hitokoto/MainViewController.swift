@@ -37,6 +37,7 @@ final class MainViewController: HitokotoViewController { // If you don't need to
                 spinner.stopAnimating()
 				sender.hidden = false
                 self.view.userInteractionEnabled = true
+                self.shareButton.enabled = true
 			}
 			
 			guard error == nil else {
@@ -51,7 +52,6 @@ final class MainViewController: HitokotoViewController { // If you don't need to
 			}
 			
 			self.updateData()
-            self.shareButton.enabled = true
         })
     }
     
