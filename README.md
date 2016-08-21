@@ -1,3 +1,6 @@
+Hitokoto is no more available.
+
+
 # hitokoto
 [hitokoto](http://hitokoto.us) extension
 
